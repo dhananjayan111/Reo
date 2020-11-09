@@ -3,7 +3,7 @@
 
 # In[9]:
 
-
+import os
 import numpy as np
 #import matplotlib.pyplot as plt
 import cv2
@@ -19,6 +19,8 @@ def colorizer(img):
     prototxt = "./models/models_colorization_deploy_v2.prototxt"
     model = "./models/colorization_release_v2.caffemodel"
     points = "./models/pts_in_hull.npy"
+    for path in ["./models/colorization_release_v2.caffemodel"]
+    print (os.path.exists(path))
     net = cv2.dnn.readNetFromCaffe(prototxt, model)
     pts = np.load(points)
     class8 = net.getLayerId("class8_ab")
