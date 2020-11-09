@@ -19,7 +19,7 @@ def colorizer(img):
     prototxt = "./models/models_colorization_deploy_v2.prototxt"
     model = "./models/colorization_release_v2.caffemodel"
     points = "./models/pts_in_hull.npy"
-    #net = cv2.dnn.readNetFromCaffe(prototxt, model)
+    net = cv2.dnn.readNetFromCaffe(prototxt, model)
     pts = np.load(points)
     class8 = net.getLayerId("class8_ab")
     conv8 = net.getLayerId("conv8_313_rh")
