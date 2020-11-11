@@ -16,9 +16,9 @@ def colorizer(img):
     #img = cv2.imread(img)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
-    prototxt = "models/models_colorization_deploy_v2.prototxt"
-    model = "models/colorization_release_v2.caffemodel"
-    points = "models/pts_in_hull.npy"
+    prototxt = "./models/models_colorization_deploy_v2.prototxt"
+    model = "./models/colorization_release_v2.caffemodel"
+    points = "./models/pts_in_hull.npy"
     net = cv2.dnn.readNetFromCaffe(prototxt, model)
     pts = np.load(points)
     class8 = net.getLayerId("class8_ab")
